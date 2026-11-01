@@ -32,6 +32,8 @@ abstract class AnimeUnity :
     AnimeHttpLegacySource(),
     ConfigurableAnimeSource {
 
+    override val baseUrl = "https://animeunity.co"
+
     // TODO: Check frequency of url changes to potentially
     // add back overridable baseurl preference
 

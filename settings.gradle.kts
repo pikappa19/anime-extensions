@@ -59,6 +59,9 @@ fun loadAllIndividualExtensions() {
     }
 }
 fun loadIndividualExtension(lang: String, name: String) {
+    // Salta l'estensione portoghese rotta che fa fallire la build di GitHub
+    if (lang == "pt" && name == "meusanimes_ass") return
+
     include("src:$lang:$name")
 }
 

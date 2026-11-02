@@ -52,11 +52,8 @@ File(rootDir, "lib-multisrc").eachDir { include("lib-multisrc:${it.name}") }
  * ======================================== HELPER FUNCTION ========================================
  */
 fun loadAllIndividualExtensions() {
-    File(rootDir, "src").eachDir { dir ->
-        dir.eachDir { subdir ->
-            loadIndividualExtension(dir.name, subdir.name)
-        }
-    }
+    // Carica SOLO l'estensione italiana di AnimeUnity e ignora tutto il resto del mondo
+    loadIndividualExtension("it", "animeunity")
 }
 fun loadIndividualExtension(lang: String, name: String) {
     // Salta l'estensione portoghese rotta che fa fallire la build di GitHub
